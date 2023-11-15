@@ -1,0 +1,346 @@
+
+.sm-x-block .content {
+    padding: 0.2rem 0;
+}
+
+.about_y {
+    font-size: 2rem;
+    background: #535353;
+    padding: 0.8rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    position: fixed;
+    right: 1rem;
+    bottom: 7.5rem;
+    z-index: 100;
+    box-shadow: 0 3px 10px #bdb7b78c;
+    border: 1px solid #fff;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.3em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+li.cike {
+    border-bottom: 1px solid #ddd;
+}
+
+li {
+    list-style-type: none;
+}
+
+.cike:hover {
+    cursor: pointer;
+    cursor: url(../style/cur/hover.cur), pointer;
+}
+
+button:disabled {
+    background: #888;
+    opacity: 0.6;
+}
+
+.avatar {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #a9a9a98c;
+    border: 2px solid #fff;
+    margin-right: 0.8rem;
+}
+
+.footer-warp {
+    background: transparent;
+    margin-top: 0;
+}
+
+.footer-warp .footer {
+    padding-bottom: 0;
+}
+
+.footer-warp .footer p {
+    line-height: 1.2rem;
+    margin: 0.5rem auto 0;
+}
+
+.tab_ic {
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.3rem;
+}
+
+.factive {
+    color: #00BCD4;
+    font-weight: 700;
+    border-bottom: 2px solid #00BCD4;
+    padding-bottom: 0.3rem;
+    transition: all 0.1s;
+
+}
+
+.github-badge {
+    display: inline-block;
+    border-radius: 4px;
+    text-shadow: none;
+    font-size: 12px;
+    color: #fff;
+    line-height: 15px;
+    background-color: #5d5d5d;
+    margin-bottom: 5px;
+    white-space: nowrap;
+
+}
+
+.github-badge:hover {
+    color: #fafafa;
+}
+
+.github-badge .badge-subject {
+    display: inline-block;
+    background-color: #4d4d4d;
+    padding: 4px 4px 4px 6px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.github-badge .badge-value {
+    display: inline-block;
+    padding: 4px 6px 4px 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.github-badge .bg-pink {
+    background-color: #ff7da9;
+}
+
+.github-badge .bg-blue {
+    background-color: #03A9F4;
+}
+
+@media screen and (max-width: 768px) {
+    div#homePage {
+        height: 260px !important;
+    }
+}
+
+.little_texts b {
+    background-color: transparent;
+    font-size: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .row.central.nav_k {
+        display: none;
+    }
+
+    .swiper-container {
+        margin-top: 3rem;
+    }
+
+    .swiper-wrap {
+        width: 100%;
+    }
+
+
+    .introduce img {
+        height: 8em;
+    }
+
+    .introduce {
+        padding: 0;
+    }
+
+    iframe {
+        height: 270px;
+    }
+
+    .wrap {
+        width: 95%;
+        height: 320px;
+        position: relative;
+        margin: 0 auto 1rem;
+        margin-top: 5.2rem;
+    }
+
+    .list {
+        height: 320px;
+    }
+}
+
+img.photo_style,
+img.aiv_touxiang {
+    opacity: 0;
+    -webkit-transition: .8s ease-in-out opacity;
+    transition: .8s ease-in-out opacity;
+    filter: blur(35px);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+img.loaded {
+    filter: blur(0);
+    opacity: 1;
+    transition: .5s filter linear, .5s -webkit-filter linear;
+}
+
+.div_off {
+    padding: 3rem 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #eb2c14;
+    box-shadow: 0 6px 15px #d3d1d159;
+}
+
+.po_rid {
+    position: relative;
+}
+
+.nub_1 b {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5rem 2rem;
+    background: #f9d7ea;
+    color: #e03997;
+    border-radius: 1rem;
+}
+
+.central.bg .row .card .leavform .textinfo .time {
+    text-align: right;
+    display: inherit;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
+    color: #423a3a;
+}
+
+.bg-img {
+    background: url(https://img.gejiba.com/images/b0d44ed67e25235f552aacbe32d81b5c.jpg) no-repeat center !important;
+    background-size: cover !important;
+}
+
+
+.alogo {
+    color: #181818;
+    transition: all 0.2s linear;
+    text-shadow: 0 2px 2px rgb(0 0 0 / 25%);
+}
+
+code {
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    color: #fa5c7c;
+    background-color: rgba(250, 92, 124, .18);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700;
+}
+
+
+/* webkit, opera, IE9 （谷歌浏览器）*/
+::selection {
+    background: #6f6f6fc7;
+    color: #ffffff;
+}
+
+/* mozilla firefox（火狐浏览器） */
+::-moz-selection {
+    background: #6f6f6fc7;
+    color: #ffffff;
+}
+
+.delay-03s {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.Blurkg {
+    backdrop-filter: blur(0px) !important;
+    background: transparent !important;
+}
+
+.cpt-loading-mask.column {
+    background: transparent !important;
+}
+
+.view-image-lead img {
+    border-radius: 10px !important;
+}
+
+.view-image-btn {
+    border-radius: 8px !important;
+}
+
+.bg-img:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+
+}
+
+.view-image {
+    z-index: 10000 !important;
+}
+
+.music_info {
+    position: fixed;
+    top: 6rem;
+    left: 1rem;
+    width: 6.5rem;
+    height: 8rem;
+    background-image: url("https://p3.music.126.net/PNNpIr9mQY98jS9H9PV9eA==/109951163525904130.jpg?param=300y300");
+    background-size: cover;
+    border-radius: 0.8rem;
+    background-position: center;
+    overflow: hidden;
+    z-index: 999999;
+    display: none;
+    cursor: move;
+}
+
+.music_info_dragging {
+    cursor: move;
+    opacity: 0.9;
+}
+
+.music_info .music_info_btn {
+    padding: 0.4rem 0.6rem;
+    background: #d0d0d073;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: saturate(3) blur(30px);
+    -webkit-backdrop-filter: saturate(3) blur(30px);
+    box-sizing: border-box;
+}
+
+.music_info .music_info_btn span {
+    width: 1.3rem;
+    height: 1.3rem;
+    display: block;
+    background-size: 100%;
+}
+
+.music_info .music_info_btn span:hover {
+    cursor: pointer;
+}
+
+.div_off h1 {
+    font-size: 1.8rem;
+}
