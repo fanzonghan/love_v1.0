@@ -41,11 +41,6 @@
                     </button>
                 </div>
             </div>
-
-
-            <div class="query_data">
-                <!-- 数据展示 -->
-            </div>
             <div id="list_data">
                 <div class="ios_page aos-init aos-animate" aos="fade-up">
                     <div class="ding_icon"></div>

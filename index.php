@@ -20,7 +20,7 @@ $articleList = [
         <?php include("header.php"); ?>
     </head>
     <div id="pjax-container">
-        <link rel="stylesheet" href="style/css/home.css">
+        <link rel="stylesheet" href="../style/css/home.css">
         <div class="Width_limit_10rem">
             <div class="central aos-init aos-animate" style="margin: 0 auto;" aos="flip-up">
                 <div class="nav_url shadow-blur">
@@ -145,9 +145,6 @@ $articleList = [
 
         </div>
         <script>
-            $(function () {
-                $("quote").addClass("shadow-blur")
-            })
             AOS.init({
                 offset: 100,
                 duration: 600,

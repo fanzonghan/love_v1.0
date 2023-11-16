@@ -60,8 +60,8 @@
             "hideMethod": "fadeOut"
         };
     })
-    $(document).ready(function () {
-        $('.tab_icon a').on('click', function (e) {
+    $(document).ready(function() {
+        $('.tab_icon a').on('click', function(e) {
             $('.tab_icon a').removeClass('factive');
             $(this).addClass('factive');
         });

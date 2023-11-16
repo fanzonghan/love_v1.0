@@ -314,7 +314,7 @@ $(document).ready(function () {
 
 
     //pjax
-    $(document).pjax('a[target!=_blank]', '#pjax-container', {fragment: '#pjax-container', timeout: 15000});
+    $(document).pjax('a[target!=_blank]', '#pjax-container', { fragment: '#pjax-container', timeout: 15000 });
     $(document).on('pjax:send', function () {
         NProgress.start();
     });
@@ -342,4 +342,5 @@ $(document).ready(function () {
         });
         getMusic();
     });
+
 });
