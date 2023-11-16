@@ -61,6 +61,9 @@
 <script src="../style/js/highlight.min.js"></script>
 <script src="../style/js/nprogress.js"></script>
 <link href="../style/css/nprogress.css" rel="stylesheet" type="text/css">
+<script src="../style/toastr/toastr.js"></script>
+<script src="../style/js/view-image.min.js"></script>
+<script src="../style/js/main.js"></script>
 <script>
     $(document).pjax('a[target!=_blank]', '#pjax-container', {fragment: '#pjax-container', timeout: 15000});
     $(document).on('pjax:send', function () {

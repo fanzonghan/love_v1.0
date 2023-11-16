@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 <head>
-    <title>LG_NewUi —— 小手一牵 岁岁年年～ </title>
-    <link rel="stylesheet" href="../style/css/index.css">
+    <title>首页</title>
     <?php include("header.php"); ?>
 </head>
 <div id="pjax-container">
@@ -863,12 +862,6 @@
         </script>
 
     </div>
-</div>
-
-<script src="../style/toastr/toastr.js"></script>
-<script src="../style/js/view-image.min.js"></script>
-<script src="../style/js/main.js"></script>
-<div id="pjax-container">
     <script>
         $(function () {
             $("quote").addClass("shadow-blur")
@@ -892,4 +885,3 @@
     </script>
 </div>
 <?php include("footer.php"); ?>
-</body>
