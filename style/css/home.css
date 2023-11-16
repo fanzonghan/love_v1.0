@@ -38,7 +38,7 @@
     background: #ffa87c;
 }
 
-.time_card:nth-child(6n+5){
+.time_card:nth-child(6n+5) {
     background: #03a9f4;
 }
 
@@ -69,11 +69,20 @@
     font-size: 1.1rem;
 }
 
-.day_cont .left_info{
+.day_cont .left_info {
     display: flex;
 }
 
-.day_cont .left_info .icon-fabiaowenzhang{
+.day_cont .left_info .icon-fabiaowenzhang {
     font-size: 20px;
     margin-right: 0.2rem;
+}
+
+.xf_city {
+    font-size: 1rem;
+    color: #8799a3;
+    background: #e7ebed;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.4rem;
+    font-weight: 400
 }

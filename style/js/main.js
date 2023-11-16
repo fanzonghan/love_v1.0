@@ -222,4 +222,124 @@ $(document).ready(function () {
         musicInfo.classList.remove("music_info_dragging");
     });
 
+
+    //轮播图
+    var items = document.querySelectorAll(".item");
+    var points = document.querySelectorAll(".point")
+    var left = document.getElementById("leftBtn");
+    var right = document.getElementById("rightBtn");
+    var all = document.querySelector(".wrap")
+    var index = 0;
+    var time = 0;
+    var clearActive = function () {
+        for (i = 0; i < items.length; i++) {
+            items[i].className = 'item';
+        }
+        for (j = 0; j < points.length; j++) {
+            points[j].className = 'point';
+        }
+    }
+    var goIndex = function () {
+        clearActive();
+        items[index].className = 'item active';
+        points[index].className = 'point active'
+    }
+    var goLeft = function () {
+        if (index == 0) {
+            index = points.length - 1;
+        } else {
+            index--;
+        }
+        goIndex();
+    }
+    var goRight = function () {
+        if (index < points.length - 1) {
+            index++;
+        } else {
+            index = 0;
+        }
+        goIndex();
+    }
+    for (i = 0; i < points.length; i++) {
+        points[i].addEventListener('click', function () {
+            var pointIndex = this.getAttribute('data-index')
+            index = pointIndex;
+            goIndex();
+            time = 0;
+        })
+    }
+    var timer;
+
+    function play() {
+        timer = setInterval(() => {
+            time++;
+            if (time == 20) {
+                goRight();
+                time = 0;
+            }
+        }, 300)
+    }
+
+    play();
+    all.onmousemove = function () {
+        clearInterval(timer)
+    }
+    all.onmouseleave = function () {
+        play();
+    }
+
+    window.onscroll = function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > 500) {
+            $('.alogo').css({
+                'color': '#181818'
+            });
+
+            $('.header-wrap').css({
+                'backdropFilter': 'saturate(5) blur(20px)'
+            });
+        }
+
+        if (scrollTop < 500) {
+
+            $('.alogo').css({
+                'color': '#777'
+            });
+
+            $('.header-wrap').css({
+                'backdropFilter': 'blur(20px)'
+            });
+        }
+    }
+
+
+    //pjax
+    $(document).pjax('a[target!=_blank]', '#pjax-container', {fragment: '#pjax-container', timeout: 15000});
+    $(document).on('pjax:send', function () {
+        NProgress.start();
+    });
+    $(document).on('pjax:complete', function () {
+        hljs.initHighlightingOnLoad();
+        window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
+        NProgress.done();
+
+        $(".img_list ul").hide();
+        $(".img_list li").bind("click", function () {
+            $(this).next("ul").slideToggle(500).siblings("ul").slideUp(500);
+        })
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 60,
+            // 是否重复
+            once: true,
+        });
+        $("quote").addClass("shadow-blur");
+        new LazyLoad({
+            threshold: 0,
+            elements_selector: ".photo_style, .aiv_touxiang"
+        });
+        getMusic();
+    });
 });

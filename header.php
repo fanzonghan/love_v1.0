@@ -1,30 +1,38 @@
+<?php
+$boyInfo = [
+    'imgurl' => 'https://q4.qlogo.cn/headimg_dl?dst_uin=8726049&spec=100',
+    'name' => '阿nb',
+    'email' => '8726049@qq.com'
+];
+$girlInfo = [
+    'imgurl' => 'https://q4.qlogo.cn/headimg_dl?dst_uin=1301214081&spec=100',
+    'name' => '草莓欧尼🌸',
+    'email' => '1301214081@qq.com'
+];
+
+?>
 <script>
-    function show_date_time() {
-        window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("2023-07-19T00:00");
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        sectimeold = timeold / 1000;
-        secondsold = Math.floor(sectimeold);
-        msPerDay = 24 * 60 * 60 * 1000;
-        e_daysold = timeold / msPerDay;
-        daysold = Math.floor(e_daysold);
-        e_hrsold = (e_daysold - daysold) * 24;
-        hrsold = Math.floor(e_hrsold);
-        e_minsold = (e_hrsold - hrsold) * 60;
-        minsold = Math.floor((e_hrsold - hrsold) * 60);
-        seconds = Math.floor((e_minsold - minsold) * 60);
+    function timekeeping() {
+        window.setTimeout("timekeeping()", 1000);
+        var birthDay = new Date("2023-08-21T00:00");
+        var today = new Date();
+        var timeOld = (today.getTime() - birthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000;
+        var elapsedDays = timeOld / msPerDay;
+        var daysOld = Math.floor(elapsedDays);
+        var elapsedHours = (elapsedDays - daysOld) * 24;
+        var hoursOld = Math.floor(elapsedHours);
+        var elapsedMinutes = (elapsedHours - hoursOld) * 60;
+        var minutesOld = Math.floor((elapsedHours - hoursOld) * 60);
+        var seconds = Math.floor((elapsedMinutes - minutesOld) * 60);
         var timeKi = document.getElementById('span_dt_dt');
         if (timeKi !== null) {
             span_dt_dt.innerHTML = "这是我们一起走过的";
-            tian.innerHTML = daysold;
-            shi.innerHTML = hrsold;
-            fen.innerHTML = minsold;
-            miao.innerHTML = seconds;
+            lovetime.innerHTML = '<b>' + daysOld + '</b>天<b>' + hoursOld + '</b>时<b>' + minutesOld + '</b>分<b>' + seconds + '</b>秒';
         }
     }
 
-    show_date_time();
+    timekeeping();
 </script>
 
 <!-- 定义视窗 -->
@@ -39,8 +47,9 @@
 <link rel="stylesheet" href="../style/css/index.css">
 <link rel="stylesheet" href="../style/css/little.css">
 <link rel="stylesheet" href="../style/css/about.css">
-<link rel="stylesheet" href="../botui/botui.min.css">
-<link rel="stylesheet" href="../botui/botui-theme-default.css">
+<link rel="stylesheet" href="../style/botui/botui.min.css">
+<link rel="stylesheet" href="../style/botui/botui-theme-default.css">
+<script src="../style/botui/botui.min.js"></script>
 <link rel="stylesheet" href="../style/css/loveImg.css">
 <link rel="stylesheet" href="../style/css/list.css">
 <link rel="stylesheet" href="../style/Font/font_list/iconfont.css">
@@ -51,7 +60,6 @@
 <link rel="stylesheet" href="../style/css/new.css">
 <link rel="stylesheet" href="../style/css/main.css">
 <script src="../style/Font/font_leav/iconfont.js"></script>
-<script src="../botui/botui.min.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
 <script src="../style/js/jquery.min.js"></script>
 <script src="../style/js/jquery.pjax.js" type="text/javascript"></script>
@@ -64,36 +72,6 @@
 <script src="../style/toastr/toastr.js"></script>
 <script src="../style/js/view-image.min.js"></script>
 <script src="../style/js/main.js"></script>
-<script>
-    $(document).pjax('a[target!=_blank]', '#pjax-container', {fragment: '#pjax-container', timeout: 15000});
-    $(document).on('pjax:send', function () {
-        NProgress.start();
-    });
-    $(document).on('pjax:complete', function () {
-        hljs.initHighlightingOnLoad();
-        window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
-        NProgress.done();
-
-        $(".img_list ul").hide();
-        $(".img_list li").bind("click", function () {
-            $(this).next("ul").slideToggle(500).siblings("ul").slideUp(500);
-        })
-        AOS.init({
-            offset: 100,
-            duration: 600,
-            easing: 'ease-in-sine',
-            delay: 60,
-            // 是否重复
-            once: true,
-        });
-        $("quote").addClass("shadow-blur");
-        new LazyLoad({
-            threshold: 0,
-            elements_selector: ".photo_style, .aiv_touxiang"
-        });
-        getMusic();
-    });
-</script>
 <body aos-easing="ease-in-sine" aos-duration="600" aos-delay="60">
 <div class="header-wrap">
     <div class="header">
@@ -119,23 +97,21 @@
         <div class="bg-img">
             <div class="middle Blurkg">
                 <div class="img-male">
-                    <img class="aiv_touxiang entered loaded"
-                         data-src="https://img.gejiba.com/images/57bc92dc7b60fd50f1649bad2c6429e7.jpg"
-                         src="https://img.gejiba.com/images/57bc92dc7b60fd50f1649bad2c6429e7.jpg" alt=""
+                    <img class="aiv_xf entered loaded"
+                         data-src="<?php echo $girlInfo['imgurl'] ?>"
+                         src="<?php echo $girlInfo['imgurl'] ?>" alt=""
                          data-ll-status="loaded">
-                    <span>
-                        Ki.                    </span>
+                    <span><?php echo $girlInfo['name'] ?></span>
                 </div>
                 <div class="love-icon">
                     <img src="../style/img/like.svg" alt="">
                 </div>
                 <div class="img-female">
-                    <img class="aiv_touxiang entered loaded"
-                         data-src="https://img.gejiba.com/images/9575cb9cb22a30fe70795792431f2a96.jpg"
-                         src="https://img.gejiba.com/images/9575cb9cb22a30fe70795792431f2a96.jpg" alt=""
+                    <img class="aiv_xf entered loaded"
+                         data-src="<?php echo $boyInfo['imgurl'] ?>"
+                         src="<?php echo $boyInfo['imgurl'] ?>" alt=""
                          data-ll-status="loaded">
-                    <span>
-                        Really                    </span>
+                    <span><?php echo $boyInfo['name'] ?></span>
                 </div>
             </div>
         </div>
@@ -166,100 +142,10 @@
     <button id="rightBtn" class="slide-right-btn material-icons swiper-btn-next" style=" opacity:0;"></button>
 
 </div>
-
-<script>
-    var items = document.querySelectorAll(".item");
-    var points = document.querySelectorAll(".point")
-    var left = document.getElementById("leftBtn");
-    var right = document.getElementById("rightBtn");
-    var all = document.querySelector(".wrap")
-    var index = 0;
-    var time = 0;
-    var clearActive = function () {
-        for (i = 0; i < items.length; i++) {
-            items[i].className = 'item';
-        }
-        for (j = 0; j < points.length; j++) {
-            points[j].className = 'point';
-        }
-    }
-    var goIndex = function () {
-        clearActive();
-        items[index].className = 'item active';
-        points[index].className = 'point active'
-    }
-    var goLeft = function () {
-        if (index == 0) {
-            index = points.length - 1;
-        } else {
-            index--;
-        }
-        goIndex();
-    }
-    var goRight = function () {
-        if (index < points.length - 1) {
-            index++;
-        } else {
-            index = 0;
-        }
-        goIndex();
-    }
-    for (i = 0; i < points.length; i++) {
-        points[i].addEventListener('click', function () {
-            var pointIndex = this.getAttribute('data-index')
-            index = pointIndex;
-            goIndex();
-            time = 0;
-        })
-    }
-    var timer;
-
-    function play() {
-        timer = setInterval(() => {
-            time++;
-            if (time == 20) {
-                goRight();
-                time = 0;
-            }
-        }, 300)
-    }
-
-    play();
-    all.onmousemove = function () {
-        clearInterval(timer)
-    }
-    all.onmouseleave = function () {
-        play();
-    }
-
-    window.onscroll = function () {
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        if (scrollTop > 500) {
-            $('.alogo').css({
-                'color': '#181818'
-            });
-
-            $('.header-wrap').css({
-                'backdropFilter': 'saturate(5) blur(20px)'
-            });
-        }
-
-        if (scrollTop < 500) {
-
-            $('.alogo').css({
-                'color': '#777'
-            });
-
-            $('.header-wrap').css({
-                'backdropFilter': 'blur(20px)'
-            });
-        }
-    }
-
-</script>
 <div class="music_info">
     <div class="music_info_btn">
-        <span class="music_info_btn_play" data-music="https://love.xiaofan.ink/upload/20231016/e0752c378f3c0e.mp3"></span>
+        <span class="music_info_btn_play"
+              data-music="https://love.xiaofan.ink/upload/20231016/e0752c378f3c0e.mp3"></span>
         <span class="music_info_btn_close"></span>
     </div>
 </div>

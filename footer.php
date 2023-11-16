@@ -1,18 +1,9 @@
 <div class="div_marb_7rem">
     <div class="footer-warp">
         <div class="footer">
-            <p><a class="github-badge" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
-                    <span class="badge-subject">ICP</span>
-                    <span class="badge-value bg-pink">
-                        粤ICP备2021037776号                    </span>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
+                    粤ICP备2021037776号
                 </a></p>
-            <p class="github-badge">
-                <span class="badge-subject">Copyright</span>
-                <span class="badge-value bg-blue">
-                    ©
-                    2023 LG_NewUi Web All Rights Reserved.
-                </span>
-            </p>
         </div>
     </div>
 </div>
