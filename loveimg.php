@@ -1,6 +1,6 @@
 <?php
 $list = [
-    ['nickname' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'loveImg' => ['https://lguiy.kikiw.cn/uploads/20231012002848_1.jpeg', 'https://lguiy.kikiw.cn/uploads/20231012002848_2.jpeg'], 'add_time' => '2023-11-17'],
+    ['nickname' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'loveImg' => ['https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'https://q1.qlogo.cn/g?b=qq&amp;nk=1301214081&amp;s=640'], 'add_time' => '2023-11-17'],
 ];
 ?>
 <meta charset="utf-8">
