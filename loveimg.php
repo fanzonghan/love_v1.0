@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="ios_page aos-init aos-animate" aos="fade-up">
+        <div class="ios_page aos-init" aos="fade-up">
             <div class="pad_1rem mar_1rem">
                 <div class="img_list">
                     <div class="flex_a po_rid">

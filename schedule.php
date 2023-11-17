@@ -15,7 +15,7 @@
 
     <div class="Width_limit_10rem">
         <div class="central mar_t0">
-            <div class="nav_url shadow-blur marb_3rem aos-init aos-animate" aos="flip-up">
+            <div class="nav_url shadow-blur marb_3rem aos-init" aos="flip-up">
                 <span class="iconfont icon_sm"></span>
                 总有些惊奇的际遇
             </div>
@@ -73,5 +73,16 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
+            $(document).ready(function () {
+                new LazyLoad({
+                    threshold: 0,
+                    elements_selector: ".photo_style, .aiv_touxiang"
+                });
+            });
+        });
+    </script>
 </div>
 <?php include("footer.php"); ?>
