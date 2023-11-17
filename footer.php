@@ -1,3 +1,23 @@
+<div id="pjax-container">
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 60,
+            once: true,
+        });
+        $(document).ready(function () {
+            window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
+            $(document).ready(function () {
+                new LazyLoad({
+                    threshold: 0,
+                    elements_selector: ".photo_style, .aiv_touxiang"
+                });
+            });
+        });
+    </script>
+</div>
 <div class="div_marb_7rem">
     <div class="footer-warp">
         <div class="footer">

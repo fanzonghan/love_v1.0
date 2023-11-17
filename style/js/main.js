@@ -311,36 +311,4 @@ $(document).ready(function () {
             });
         }
     }
-
-
-    //pjax
-    $(document).pjax('a[target!=_blank]', '#pjax-container', { fragment: '#pjax-container', timeout: 15000 });
-    $(document).on('pjax:send', function () {
-        NProgress.start();
-    });
-    $(document).on('pjax:complete', function () {
-        hljs.initHighlightingOnLoad();
-        window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
-        NProgress.done();
-
-        $(".img_list ul").hide();
-        $(".img_list li").bind("click", function () {
-            $(this).next("ul").slideToggle(500).siblings("ul").slideUp(500);
-        })
-        AOS.init({
-            offset: 100,
-            duration: 600,
-            easing: 'ease-in-sine',
-            delay: 60,
-            // 是否重复
-            once: true,
-        });
-        $("quote").addClass("shadow-blur");
-        new LazyLoad({
-            threshold: 0,
-            elements_selector: ".photo_style, .aiv_touxiang"
-        });
-        getMusic();
-    });
-
 });

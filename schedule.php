@@ -1,8 +1,8 @@
 <?php
-    $scheduleList = [
-        ['title' => '事件一', 'add_time' => '2023年11月16日', 'day' => 12],
-        ['title' => '事件二', 'add_time' => '2023年11月15日', 'day' => 13]
-    ];
+$scheduleList = [
+    ['title' => '事件一', 'add_time' => '2023-11-16'],
+    ['title' => '事件二', 'add_time' => '2023-11-15']
+];
 ?>
 <meta charset="utf-8">
 <head>
@@ -11,11 +11,11 @@
 </head>
 <div id="pjax-container">
 
-    <link rel="stylesheet" href="../style/css/schedule.css" />
+    <link rel="stylesheet" href="../style/css/schedule.css"/>
 
     <div class="Width_limit_10rem">
         <div class="central mar_t0">
-            <div class="nav_url shadow-blur marb_3rem aos-init aos-animate" aos="flip-up">
+            <div class="nav_url shadow-blur marb_3rem aos-init" aos="flip-up">
                 <span class="iconfont icon_sm"></span>
                 总有些惊奇的际遇
             </div>
@@ -41,18 +41,19 @@
                     </button>
                 </div>
             </div>
+
             <div id="list_data">
-                <div class="ios_page aos-init aos-animate" aos="fade-up">
-                    <div class="ding_icon"></div>
+                <div class="ios_page aos-init" aos="fade-up">
+                    <div class="ding_icon list_env"><span class="list_num">Event #1</span></div>
                     <div class="pad_1rem mar_1rem">
                         <div class="img_list">
-                            <div class="list_env">
-                                 <span class="list_num">Event #1</span>
-                            </div>
                             <div class="content_a">
-                                <p></p>
                                 <li class="cike">
-                                    <i class="iconfont icon-chenggong2 com" style="font-size: 1.8rem;"></i>
+                                    <svg t="1700207346699" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg" p-id="12277" width="200" height="200">
+                                        <path d="M512 0C229.154133 0 0 229.154133 0 512s229.154133 512 512 512 512-229.154133 512-512S791.278933 0 512 0z m-53.7088 773.376L193.365333 519.168l68.027734-53.7088 153.941333 114.568533s175.445333-196.9152 386.696533-332.970666l25.070934 32.221866S583.611733 494.08 458.2912 773.358933z"
+                                              fill="#0DD590" p-id="12278"></path>
+                                    </svg>
                                     <span style="font-size: 1.3rem;margin-left: 0.5rem;color: #6c6c6c;">一起期待未来甜蜜小生活🍸</span>
                                 </li>
                                 <ul style="display: none;">
@@ -60,7 +61,6 @@
                                         <span class="weisc">暂未上传</span>
                                     </li>
                                 </ul>
-                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -68,5 +68,16 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
+            $(document).ready(function () {
+                new LazyLoad({
+                    threshold: 0,
+                    elements_selector: ".photo_style, .aiv_touxiang"
+                });
+            });
+        });
+    </script>
 </div>
 <?php include("footer.php"); ?>

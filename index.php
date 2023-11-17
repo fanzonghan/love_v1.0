@@ -20,7 +20,7 @@ $articleList = [
         <?php include("header.php"); ?>
     </head>
     <div id="pjax-container">
-        <link rel="stylesheet" href="../style/css/home.css">
+        <link rel="stylesheet" href="style/css/home.css">
         <div class="Width_limit_10rem">
             <div class="central aos-init aos-animate" style="margin: 0 auto;" aos="flip-up">
                 <div class="nav_url shadow-blur">
@@ -144,23 +144,5 @@ $articleList = [
             </script>
 
         </div>
-        <script>
-            AOS.init({
-                offset: 100,
-                duration: 600,
-                easing: 'ease-in-sine',
-                delay: 60,
-                once: true,
-            });
-            $(document).ready(function () {
-                window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
-                $(document).ready(function () {
-                    new LazyLoad({
-                        threshold: 0,
-                        elements_selector: ".photo_style, .aiv_touxiang"
-                    });
-                });
-            });
-        </script>
     </div>
 <?php include("footer.php"); ?>

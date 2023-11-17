@@ -55,9 +55,8 @@ $girlInfo = [
 <link rel="stylesheet" href="../style/Font/font_list/iconfont.css">
 <link rel="stylesheet" href="../style/toastr/toastr.css">
 <link rel="stylesheet" href="../style/css/loadinglike.css">
-<link rel="stylesheet" href="../style/static/css/aos.css">
-<link rel="stylesheet" href="../style/icon/iconfont.css">
 <link rel="stylesheet" href="../style/css/new.css">
+<link rel="stylesheet" href="../style/icon/iconfont.css">
 <link rel="stylesheet" href="../style/css/main.css">
 <script src="../style/Font/font_leav/iconfont.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
@@ -65,13 +64,46 @@ $girlInfo = [
 <script src="../style/js/jquery.pjax.js" type="text/javascript"></script>
 <script src="../style/js/lazyload.js"></script>
 <script src="../style/js/lazyload.min.js"></script>
-<script src="../style/static/js/aos.js"></script>
 <script src="../style/js/highlight.min.js"></script>
 <script src="../style/js/nprogress.js"></script>
 <link href="../style/css/nprogress.css" rel="stylesheet" type="text/css">
 <script src="../style/toastr/toastr.js"></script>
 <script src="../style/js/view-image.min.js"></script>
+
+<link rel="stylesheet" href="../style/static/css/aos.css">
+<script src="../style/static/js/aos.js"></script>
 <script src="../style/js/main.js"></script>
+<script>
+    //pjax
+    $(document).pjax('a[target!=_blank]', '#pjax-container', {fragment: '#pjax-container', timeout: 15000});
+    $(document).on('pjax:send', function () {
+        NProgress.start();
+    });
+    $(document).on('pjax:complete', function () {
+        hljs.initHighlightingOnLoad();
+        window.ViewImage && ViewImage.init('.loveimg img, .img_list img, #md-view img, img.aiv_touxiang,.leav_card .aiv_qq img, img.photo_style');
+        NProgress.done();
+
+        $(".img_list ul").hide();
+        $(".img_list li").bind("click", function () {
+            $(this).next("ul").slideToggle(500).siblings("ul").slideUp(500);
+        })
+        AOS.init({
+            offset: 100,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 60,
+            // 是否重复
+            once: true,
+        });
+        $("quote").addClass("shadow-blur");
+        new LazyLoad({
+            threshold: 0,
+            elements_selector: ".photo_style, .aiv_touxiang"
+        });
+        getMusic();
+    });
+</script>
 <body aos-easing="ease-in-sine" aos-duration="600" aos-delay="60">
 <div class="header-wrap">
     <div class="header">

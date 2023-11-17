@@ -1,6 +1,10 @@
 <?php
     $articleList = [
-        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日']
+        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日'],
+        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日'],
+        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日'],
+        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日'],
+        ['name' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'details' => '幸福', 'city' => '郑州市', 'add_time' => '2023年11月16日'],
     ];
 ?>
 <meta charset="utf-8">
@@ -25,7 +29,7 @@
             </div>
             <?php
                 foreach ($articleList as $item){
-                    echo '<div class="ios_page aos-init aos-animate" aos="fade-up">
+                    echo '<div class="ios_page aos-init" aos="fade-up">
                             <div class="pad_1rem mar_1rem">
                                 <div class="article_list">
                                     <div class="flex_a">
@@ -39,15 +43,19 @@
                                     <div class="title_a"></div>
                                     <div class="content_a">'.$item['details'].'</div>
                                     <div class="see">
-                                        <a href="#"><span class="see_btn shadow-blur">查看详情</span></a>
+                                        <span class="see_btn shadow-blur" onclick="checkInfo(1)">查看详情</span>
                                     </div>
                                 </div>
                             </div>
                         </div>';
                 }
             ?>
-
         </div>
     </div>
+    <script>
+        function checkInfo(id){
+            console.log(id)
+        }
+    </script>
 </div>
 <?php include("footer.php"); ?>
