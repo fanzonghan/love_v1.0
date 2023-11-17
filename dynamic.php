@@ -43,15 +43,19 @@
                                     <div class="title_a"></div>
                                     <div class="content_a">'.$item['details'].'</div>
                                     <div class="see">
-                                        <a href="#"><span class="see_btn shadow-blur">查看详情</span></a>
+                                        <span class="see_btn shadow-blur" onclick="checkInfo(1)">查看详情</span>
                                     </div>
                                 </div>
                             </div>
                         </div>';
                 }
             ?>
-
         </div>
     </div>
+    <script>
+        function checkInfo(id){
+            console.log(id)
+        }
+    </script>
 </div>
 <?php include("footer.php"); ?>

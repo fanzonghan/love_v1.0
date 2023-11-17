@@ -55,8 +55,8 @@ $girlInfo = [
 <link rel="stylesheet" href="../style/Font/font_list/iconfont.css">
 <link rel="stylesheet" href="../style/toastr/toastr.css">
 <link rel="stylesheet" href="../style/css/loadinglike.css">
-<link rel="stylesheet" href="../style/icon/iconfont.css">
 <link rel="stylesheet" href="../style/css/new.css">
+<link rel="stylesheet" href="../style/icon/iconfont.css">
 <link rel="stylesheet" href="../style/css/main.css">
 <script src="../style/Font/font_leav/iconfont.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>

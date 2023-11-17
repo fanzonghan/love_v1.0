@@ -1,3 +1,8 @@
+<?php
+$list = [
+    ['nickname' => '测试', 'imgurl' => 'https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640', 'title' => '标题', 'loveImg' => ['https://lguiy.kikiw.cn/uploads/20231012002848_1.jpeg', 'https://lguiy.kikiw.cn/uploads/20231012002848_2.jpeg'], 'add_time' => '2023-11-17'],
+];
+?>
 <meta charset="utf-8">
 <head>
     <title>照片墙</title>
@@ -11,33 +16,32 @@
                 记录下美好瞬间～
             </div>
         </div>
-
-        <div class="ios_page aos-init" aos="fade-up">
+        <?php
+        foreach ($list as $item) {
+            echo '<div class="ios_page aos-init" aos="fade-up">
             <div class="pad_1rem mar_1rem">
                 <div class="img_list">
                     <div class="flex_a po_rid">
                         <div class="img_list_head">
-                            <span class="aiv" style="background-image: url(https://img.gejiba.com/images/9575cb9cb22a30fe70795792431f2a96.jpg);"></span>
+                            <span class="aiv"
+                                  style="background-image: url(' . $item['imgurl'] . ');"></span>
                         </div>
                         <div class="img_list_info">
-                           <span class="name_a">Reall<i class="time_a">上传于2023-09-29</i></span>
+                            <span class="name_a">' . $item['nickname'] . '<i class="time_a">上传于' . $item['add_time'] . '</i></span>
                         </div>
                         <div class="nub_1"><b>#1</b></div>
                     </div>
                     <div class="content_a">
-                        <p><b class="img_title">Title：</b>国庆游</p>
+                        <p><b class="img_title">Title：</b>' . $item['title'] . '</p>
                     </div>
-                    <div class="loveimg row">
-                        <img class="lazy img_img col-lg-4 col-md-4 col-sm-4 col-sm-x-4"
-                             data-original="https://lguiy.kikiw.cn/uploads/20231012002848_1.jpeg"
-                             src="https://lguiy.kikiw.cn/uploads/20231012002848_1.jpeg" style="display: block;">
-                        <img class="lazy img_img col-lg-4 col-md-4 col-sm-4 col-sm-x-4"
-                             data-original="https://lguiy.kikiw.cn/uploads/20231012002848_2.jpeg"
-                             src="https://lguiy.kikiw.cn/uploads/20231012002848_2.jpeg" style="display: block;">
-                    </div>
+                    <div class="loveimg row">';
+            foreach ($item['loveImg'] as $img) {
+                echo '<img class="lazy img_img col-lg-4 col-md-4 col-sm-4 col-sm-x-4" data-original="' . $img . '" src="' . $img . '" style="display: block;">';
+            }
+            echo '</div>
                     <div class="see">
                             <span class="see_btn">
-                                <span class="iconfont"></span>2023-09-29
+                                <span class="iconfont"></span>' . $item['add_time'] . '
                             </span>
                         <a class="svg_hover" href="#">
                             <svg class="click_svg" viewBox="0 0 1024 1024" version="1.1"
@@ -46,13 +50,12 @@
                                       fill="#4C4C4C" p-id="3580"></path>
                             </svg>
                         </a>
-
                     </div>
-
                 </div>
             </div>
-        </div>
-
+        </div>';
+        }
+        ?>
         <script>
             $(document).ready(function () {
                 $(".lazy").lazyload({

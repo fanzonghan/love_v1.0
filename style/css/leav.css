@@ -128,10 +128,11 @@ span.iconfont.icon-liuyan {
     background: #fff;
     margin: 1rem 0;
     border-radius: 0.8rem;
-    box-shadow: 0 8px 12px #ebedf0;
-    border: 1px solid rgba(208, 206, 206, 0.4) !important;
+    box-shadow: 3px 8px 0px 1px #ebedf0;
+    /*border: 1px solid rgba(208, 206, 206, 0.4) !important;*/
     transition: all 0.3s linear !important;
     cursor: pointer;
+    padding: 2rem 0;
 }
 
 .leav_card:hover {
