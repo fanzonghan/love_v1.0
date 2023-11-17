@@ -25,7 +25,7 @@ $articleList = [
             <div class="central aos-init aos-animate" style="margin: 0 auto;" aos="flip-up">
                 <div class="nav_url shadow-blur">
                     <span class="iconfont icon_sm"></span>
-                    小手一牵 岁岁年年～
+                    金风玉露一相逢 便胜却人间无数
                 </div>
             </div>
             <!-- 时间区域 -->

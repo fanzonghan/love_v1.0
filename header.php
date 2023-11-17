@@ -14,7 +14,7 @@ $girlInfo = [
 <script>
     function timekeeping() {
         window.setTimeout("timekeeping()", 1000);
-        var birthDay = new Date("2023-08-21T00:00");
+        var birthDay = new Date("2023-05-14T15:00");
         var today = new Date();
         var timeOld = (today.getTime() - birthDay.getTime());
         var msPerDay = 24 * 60 * 60 * 1000;
