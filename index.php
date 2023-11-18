@@ -88,7 +88,7 @@ $articleList = [
                                     <span class="qqavi"
                                           style="background-image: url(' . $item['imgurl'] . ');"></span>
                                         <div class="list_info">
-                                            <b class="name">' . $item['name'] . '<span class="xf_city">' . $item['city'] . '</span></b>
+                                            <b class="name">' . $item['name'] . '<span class="iconfont icon-diqu" style="font-size: 1rem;color: #fbbd08">' . $item['city'] . '</span></b>
                                             <p class="content">' . $item['details'] . '</p>
                                         </div>
                                     </div>

@@ -20,7 +20,7 @@ $total = 2;
                 书写下你的留言祝福～
             </div>
         </div>
-        <div class="central">
+        <div class="central" style="margin-bottom:0">
             <div class="ltps lyips shadow-blur" style="justify-content: center;align-items: baseline;">
                 <!--            <span class="hen"></span>-->
                 祝福留言共<b class="nub_con">
@@ -29,27 +29,70 @@ $total = 2;
             </div>
         </div>
         <!--留言列表-->
-        <div class="row leav_card_">
-            <?php
-            foreach ($leaveList as $item) {
-                echo '<div class="leav_card col-lg-4 col-md-6 col-sm-6 col-sm-x-12 aos-init aos-animate" aos="fade-up"
-                             style="background-image: url(' . $item['imgurl'] . ');">
-                            <!--                <div class="bg_leav" style="background-image: url(https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640);"></div>-->
-                            <div class="aiv_qq">
-                                <img src="' . $item['imgurl'] . '" alt="">
-                            </div>
-                            <div class="row_flex_leav">
-                                <div class="name_leav"><span>' . $item['name'] . '</span></div>
-                                <div class="leav_text">' . $item['name'] . '：' . $item['details'] . '</div>
-                                <div class="leav_footer">
-                                    <div class="leav_city"><span class="iconfont"></span>' . $item['city'] . '</div>
-                                    <div class="leav_time"><span class="iconfont icon-shijian"></span>' . $item['add_time'] . '</div>
-                                </div>
-                            </div>
-                        </div>';
-            }
-            ?>
+        <!--        <div class="row leav_card_">-->
+        <!--            --><?php
+        //            foreach ($leaveList as $item) {
+        //                echo '<div class="leav_card col-lg-4 col-md-6 col-sm-6 col-sm-x-12 aos-init aos-animate" aos="fade-up"
+        //                         style="background-image: url(' . $item['imgurl'] . ');">
+        //                        <!--                <div class="bg_leav" style="background-image: url(https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640);"></div>-->
+        //                        <div class="aiv_qq">
+        //                            <img src="' . $item['imgurl'] . '" alt="">
+        //                        </div>
+        //                        <div class="row_flex_leav">
+        //                            <div class="name_leav"><span>' . $item['name'] . '</span></div>
+        //                            <div class="leav_text">' . $item['name'] . '：' . $item['details'] . '</div>
+        //                            <div class="leav_footer">
+        //                                <div class="leav_city"><span class="iconfont"></span>' . $item['city'] . '</div>
+        //                                <div class="leav_time"><span class="iconfont icon-shijian"></span>' . $item['add_time'] . '</div>
+        //                            </div>
+        //                        </div>
+        //                    </div>';
+        //            }
+        //            ?>
+        <!--        </div>-->
+        <div class="pa_0" style="padding: 1rem;">
+            <div id="botui-app" class="botui-app-container">
+                <div class="botui botui-container">
+                    <div class="botui-messages-container">
+                        <?php
+                        foreach ($leaveList as $item) {
+                            echo '<div class="botui-message aos-init" aos="fade-down">
+                                        <div class="">
+                                            <div style="display: flex; align-items: center;width: 80%;color: #6d6d6d">
+                                                <img style="border-radius:50%;"
+                                                     src="'.$item['imgurl'].'" height="40px"/>
+                                                <span style="padding-left: 10px">' . $item['name'] . '</span>
+                                                <span style="padding-left: 10px">时间：' . $item['add_time'] . '</span>
+                                            </div>
+                                            <div style="padding-top: 5px">
+                                                <div class="botui-message-content text">
+                                                    <span>'.$item['details'].'</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>';
+                        }
+                        ?>
+                        <!--                        <div class="botui-message aos-init" aos="fade-down">-->
+                        <!--                            <div class="">-->
+                        <!--                                <div style="display: flex; align-items: center;width: 80%;color: #6d6d6d">-->
+                        <!--                                    <img style="border-radius:50%;"-->
+                        <!--                                         src="https://q1.qlogo.cn/g?b=qq&amp;nk=8726049&amp;s=640" height="40px"/>-->
+                        <!--                                    <span style="padding-left: 10px">测试</span>-->
+                        <!--                                    <span style="padding-left: 10px">时间：2023-11-18</span>-->
+                        <!--                                </div>-->
+                        <!--                                <div style="padding-top: 5px">-->
+                        <!--                                    <div class="botui-message-content text">-->
+                        <!--                                        <span>Hi, 欢迎来访~</span>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                    </div>
+                </div>
+            </div>
         </div>
+
         <!--留言提交-->
         <div class="central central-800 bg" id="show_mes" style="display: none">
             <div class="row liuyan_row">
@@ -58,7 +101,8 @@ $total = 2;
                         <div class="inputbox">
                             <img src="https://q1.qlogo.cn/g?b=qq&amp;nk=1234567&amp;s=100" alt="" class="avatar">
                             <input id="qq" type="text" name="qq" placeholder="QQ号码" class="rig">
-                            <input id="nickname" type="text" name="nickname" placeholder="昵称（自动获取）" class="let" autocomplete="off">
+                            <input id="nickname" type="text" name="nickname" placeholder="昵称（自动获取）" class="let"
+                                   autocomplete="off">
                         </div>
                         <div class="see_city">
                                 <span>
@@ -83,17 +127,17 @@ $total = 2;
         <script>
             $('#qq').blur(function () {
                 let qq = $('#qq').val();
-                $.ajax('https://api.qjqq.cn/api/qqinfo',{
-                    type:'get',
-                    data:{qq:qq},
-                    success:function (res) {
+                $.ajax('https://api.qjqq.cn/api/qqinfo', {
+                    type: 'get',
+                    data: {qq: qq},
+                    success: function (res) {
                         $('#nickname').val(res.name)
                     }
                 })
             });
-            $('body').click(function(e){
+            $('body').click(function (e) {
                 // 判断点击的元素是否在指定的div内
-                if(!$(e.target).closest('#show_mes').length && !$(e.target).is('#show_mes')){
+                if (!$(e.target).closest('#show_mes').length && !$(e.target).is('#show_mes')) {
                     // 隐藏div
                     $("#show_mes").fadeOut(500);
                 }
@@ -110,6 +154,7 @@ $total = 2;
                     $("#show_mes").fadeToggle(500);
                 });
             });
+
             function stripHtmlTags(htmlString) {
                 return htmlString.replace(/<[^>]+>/g, '');
             }
